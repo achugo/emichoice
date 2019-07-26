@@ -563,31 +563,31 @@
                                 	<h3>Book Flight</h3>
                                     <p>Find your dream flight today</p>
                                     
-                                    <form>
+                                    <form id="postData">
                                     	<div class="form-group">
-                                    		<input type="text" class="form-control" placeholder="First Name" required/>                                       
+                                    		<input type="text" class="form-control" placeholder="First Name" name="firstName" required/>                                       
                                         </div>
                                         
                                         <div class="form-group">
-                                    		<input type="text" class="form-control" placeholder="Last Name" required/>                                       
+                                    		<input type="text" class="form-control" placeholder="Last Name" name="lastName" required/>                                       
                                         </div>
                                         
                                         <div class="form-group">
-                                    		<input type="email" class="form-control" placeholder="Email" required/>                                       
+                                    		<input type="email" class="form-control" placeholder="Email" name="email" required/>                                       
                                         </div>
                                         
                                         <div class="form-group">
-                                    		<input type="text" class="form-control" placeholder="Phone" required/>                                       
+                                    		<input type="text" class="form-control" placeholder="Phone" name="phoneNo" required/>                                       
                                         </div>
                                         
                                         <div class="form-group">
-                                    		<input type="text" class="form-control dpd3" placeholder="Booking Date" required/>                                       
+                                    		<input type="text" class="form-control dpd3" placeholder="Booking Date" name="bookingDate" required/>                                       
                                         </div>
                                         
                                         <div class="row">
                                         	<div class="col-sm-6 col-md-12 col-lg-6 no-sp-r">
                                                 <div class="form-group right-icon">
-                                                    <select class="form-control">
+                                                    <select class="form-control" name="adult">
                                                         <option selected>Adults</option>
                                                         <option>1</option>
                                                         <option>2</option>
@@ -599,7 +599,7 @@
                                             
                                             <div class="col-sm-6 col-md-12 col-lg-6 no-sp-l">    
                                                 <div class="form-group right-icon">
-                                                    <select class="form-control">
+                                                    <select class="form-control" name="children">
                                                         <option selected>Children</option>
                                                         <option>1</option>
                                                         <option>2</option>
@@ -610,21 +610,21 @@
                                             </div>
                                         </div>
                                         
-                                        <div class="form-group right-icon">
-                                            <select class="form-control">
+                                        <!-- <div class="form-group right-icon">
+                                            <select class="form-control" name="">
                                                 <option selected>Payment Method</option>
                                                 <option>Credit Card</option>
                                                 <option>Paypal</option>
                                             </select>
                                             <i class="fa fa-angle-down"></i>
-                                        </div>
+                                        </div> -->
                                         
                                         <div class="checkbox custom-check">
                                         	<input type="checkbox" id="check01" name="checkbox"/>
                                             <label for="check01"><span><i class="fa fa-check"></i></span>By continuing, you are agree to the <a href="#">Terms & Conditions.</a></label>
                                         </div>
                                         
-                                        <button class="btn btn-block btn-orange">Confirm Booking</button>
+                                        <button type="submit" class="btn btn-block btn-orange">Confirm Booking</button>
                                     </form>
 
                                 </div><!-- end booking-form -->
@@ -673,222 +673,21 @@
                                     <div><img src="images/f-feature-5.jpg" class="img-responsive" alt="feature-img"/></div>
                                 </div><!-- end feature-slider -->
                             	
-                                <div class="feature-slider-nav">
-                                    <div><img src="images/f-feature-thumb-1.jpg" class="img-responsive" alt="feature-thumb"/></div>
-                                    <div><img src="images/f-feature-thumb-2.jpg" class="img-responsive" alt="feature-thumb"/></div>
-                                    <div><img src="images/f-feature-thumb-3.jpg" class="img-responsive" alt="feature-thumb"/></div>
-                                    <div><img src="images/f-feature-thumb-4.jpg" class="img-responsive" alt="feature-thumb"/></div>
-                                    <div><img src="images/f-feature-thumb-5.jpg" class="img-responsive" alt="feature-thumb"/></div>
-                                </div><!-- end feature-slider-nav -->
+                                <!-- end feature-slider-nav -->
                             
                             	<ul class="list-unstyled features flight-features">
-                                	<li><div class="f-icon"><i class="fa fa-plane"></i></div><div class="f-text"><p class="f-heading">From</p><p class="f-data">Sydney</p></div></li>
-                                    <li><div class="f-icon"><i class="fa fa-plane"></i></div><div class="f-text"><p class="f-heading">To</p><p class="f-data">Paris</p></div></li>
-                                    <li><div class="f-icon"><i class="fa fa-clock-o"></i></div><div class="f-text"><p class="f-heading">Total Time</p><p class="f-data">6 hrs 30 mins</p></div></li>
+                                	<li><div class="f-icon"><i class="fa fa-plane"></i></div><div class="f-text"><p class="f-heading">From</p><p class="f-data flyFrom"></p></div></li>
+                                    <li><div class="f-icon"><i class="fa fa-plane"></i></div><div class="f-text"><p class="f-heading">To</p><p class="f-data flyTo"></p></div></li>
+                                    <li><div class="f-icon"><i class="fa fa-clock-o"></i></div><div class="f-text"><p class="f-heading">Total Time</p><p class="f-data duration">6 hrs 30 mins</p></div></li>
                                 </ul>
                             </div><!-- end detail-slider -->  
 
-                            <div class="detail-tabs">
-                            	<ul class="nav nav-tabs nav-justified">
-                                    <li class="active"><a href="#flight-info" data-toggle="tab">Flight Information</a></li>
-                                    <li><a href="#entertainment" data-toggle="tab">Entertainment</a></li>
-                                    <li><a href="#connectivity" data-toggle="tab">Connectivity</a></li>
-                                    <li><a href="#fare" data-toggle="tab">Fare</a></li>
-                                    <li><a href="#baggage" data-toggle="tab">Baggage</a></li>
-                                </ul>
-                            	
-                                <div class="tab-content">
-
-                                    <div id="flight-info" class="tab-pane in active">
-                                    	<div class="row">
-                                    		<div class="col-sm-4 col-md-4 tab-img">
-                                        		<img src="images/flight-detail-tab-1.jpg" class="img-responsive" alt="flight-detail-img" />
-                                            </div><!-- end columns -->
-                                        	
-                                            <div class="col-sm-8 col-md-8 tab-text">
-                                        		<h3>Flight Information</h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                            </div><!-- end columns -->
-                                        </div><!-- end row -->
-                                    </div><!-- end flight-info -->
-                                	
-                                    <div id="entertainment" class="tab-pane">
-                                    	<div class="row">
-                                    		<div class="col-sm-4 col-md-4 tab-img">
-                                        		<img src="images/flight-detail-tab-2.jpg" class="img-responsive" alt="flight-detail-img" />
-                                            </div><!-- end columns -->
-                                        	
-                                            <div class="col-sm-8 col-md-8 tab-text">
-                                        		<h3>Entertainment</h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-                                            </div><!-- end columns -->
-                                        </div><!-- end row -->
-                                    </div><!-- end entertainment -->
-                                    
-                                    <div id="connectivity" class="tab-pane">
-                                    	<div class="row">
-                                    		<div class="col-sm-4 col-md-4 tab-img">
-                                        		<img src="images/flight-detail-tab-3.jpg" class="img-responsive" alt="flight-detail-img" />
-                                            </div><!-- end columns -->
-                                        	
-                                            <div class="col-sm-8 col-md-8 tab-text">
-                                        		<h3>Connectivity</h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.<br/> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                            </div><!-- end columns -->
-                                        </div><!-- end row -->
-                                    </div><!-- end connectivity -->
-                                    
-                                    <div id="fare" class="tab-pane">
-                                    	<div class="row">
-                                    		<div class="col-sm-4 col-md-4 tab-img">
-                                        		<img src="images/flight-detail-tab-4.jpg" class="img-responsive" alt="flight-detail-img" />
-                                            </div><!-- end columns -->
-                                        	
-                                            <div class="col-sm-8 col-md-8 tab-text">
-                                        		<h3>Fare</h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                            </div><!-- end columns -->
-                                        </div><!-- end row -->
-                                    </div><!-- end fare -->
-                                    
-                                    <div id="baggage" class="tab-pane">
-                                    	<div class="row">
-                                    		<div class="col-sm-4 col-md-4 tab-img">
-                                        		<img src="images/flight-detail-tab-5.jpg" class="img-responsive" alt="flight-detail-img" />
-                                            </div><!-- end columns -->
-                                        	
-                                            <div class="col-sm-8 col-md-8 tab-text">
-                                        		<h3>Baggage</h3>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                            </div><!-- end columns -->
-                                        </div><!-- end row -->
-                                    </div><!-- end baggage -->
-                                    
-                                </div><!-- end tab-content -->
-                            </div><!-- end detail-tabs -->
+                            <!-- end detail-tabs -->
                             
-                            <div class="available-blocks" id="available-seats">
-                            	<h2>Available Seats</h2>
-                            	<div class="list-block main-block seat-block">
-                                    <div class="list-content">
-                                        <div class="main-img list-img seat-img">
-                                            <a href="#">
-                                                <img src="images/available-seat-1.jpg" class="img-responsive" alt="seat-img" />
-                                            </a>
-                                            <div class="main-mask">
-                                                <ul class="list-unstyled list-inline offer-price-1">
-                                                    <li class="price">$29.00<span class="divider">|</span><span class="pkg">Starting</span></li>
-                                                    <li class="rating">
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star lightgrey"></i></span>
-                                                    </li>
-                                                </ul>
-                                            </div><!-- end main-mask -->
-                                        </div><!-- end seat-img -->
-                                        
-                                        <div class="list-info seat-info">
-                                            <h3 class="block-title"><a href="#">Advanced Seats</a></h3>
-                                            <p class="block-minor">Flexible</p>
-                                            <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis. Est atqui timeam mnesarchum at, pro an eros perpetua ullamcorper.</p>
-                                            <a href="#" class="btn btn-orange btn-lg">View More</a>
-                                         </div><!-- end seat-info -->
-                                    </div><!-- end list-content -->
-                                </div><!-- end seat-block -->
-								
-                                <div class="list-block main-block seat-block">
-                                    <div class="list-content">
-                                        <div class="main-img list-img seat-img">
-                                            <a href="#">
-                                                <img src="images/available-seat-2.jpg" class="img-responsive" alt="seat-img" />
-                                            </a>
-                                            <div class="main-mask">
-                                                <ul class="list-unstyled list-inline offer-price-1">
-                                                    <li class="price">$38.00<span class="divider">|</span><span class="pkg">Starting</span></li>
-                                                    <li class="rating">
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star lightgrey"></i></span>
-                                                    </li>
-                                                </ul>
-                                            </div><!-- end main-mask -->
-                                        </div><!-- end seat-img -->
-                                        
-                                        <div class="list-info seat-info">
-                                            <h3 class="block-title"><a href="#">Panel Seats</a></h3>
-                                            <p class="block-minor">Flexible</p>
-                                            <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis. Est atqui timeam mnesarchum at, pro an eros perpetua ullamcorper.</p>
-                                            <a href="#" class="btn btn-orange btn-lg">View More</a>
-                                         </div><!-- end seat-info -->
-                                    </div><!-- end list-content -->
-                                </div><!-- end seat-block -->
-                                
-                                <div class="list-block main-block seat-block">
-                                    <div class="list-content">
-                                        <div class="main-img list-img seat-img">
-                                            <a href="#">
-                                                <img src="images/available-seat-3.jpg" class="img-responsive" alt="seat-img" />
-                                            </a>
-                                            <div class="main-mask">
-                                                <ul class="list-unstyled list-inline offer-price-1">
-                                                    <li class="price">$36.00<span class="divider">|</span><span class="pkg">Starting</span></li>
-                                                    <li class="rating">
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star lightgrey"></i></span>
-                                                    </li>
-                                                </ul>
-                                            </div><!-- end main-mask -->
-                                        </div><!-- end seat-img -->
-                                        
-                                        <div class="list-info seat-info">
-                                            <h3 class="block-title"><a href="#">Standard Seats</a></h3>
-                                            <p class="block-minor">Flexible</p>
-                                            <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis. Est atqui timeam mnesarchum at, pro an eros perpetua ullamcorper.</p>
-                                            <a href="#" class="btn btn-orange btn-lg">View More</a>
-                                         </div><!-- end seat-info -->
-                                    </div><!-- end list-content -->
-                                </div><!-- end seat-block -->
-                                
-                                <div class="list-block main-block seat-block">
-                                    <div class="list-content">
-                                        <div class="main-img list-img seat-img">
-                                            <a href="#">
-                                                <img src="images/available-seat-4.jpg" class="img-responsive" alt="seat-img" />
-                                            </a>
-                                            <div class="main-mask">
-                                                <ul class="list-unstyled list-inline offer-price-1">
-                                                    <li class="price">$25.00<span class="divider">|</span><span class="pkg">Starting</span></li>
-                                                    <li class="rating">
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star orange"></i></span>
-                                                        <span><i class="fa fa-star lightgrey"></i></span>
-                                                    </li>
-                                                </ul>
-                                            </div><!-- end main-mask -->
-                                        </div><!-- end seat-img -->
-                                        
-                                        <div class="list-info seat-info">
-                                            <h3 class="block-title"><a href="#">Standard Seats</a></h3>
-                                            <p class="block-minor">Flexible</p>
-                                            <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis. Est atqui timeam mnesarchum at, pro an eros perpetua ullamcorper.</p>
-                                            <a href="#" class="btn btn-orange btn-lg">View More</a>
-                                         </div><!-- end seat-info -->
-                                    </div><!-- end list-content -->
-                                </div><!-- end seat-block -->
-                                
-                            </div><!-- end available-seats -->
+                           <!-- end available-seats -->
                             
                             
-                            <div class="pages">
+                            <!-- <div class="pages">
                                 <ol class="pagination">
                                     <li><a href="#" aria-label="Previous"><span aria-hidden="true"><i class="fa fa-angle-left"></i></span></a></li>
                                     <li class="active"><a href="#">1</a></li>
@@ -897,7 +696,8 @@
                                     <li><a href="#">4</a></li>
                                     <li><a href="#" aria-label="Next"><span aria-hidden="true"><i class="fa fa-angle-right"></i></span></a></li>
                                 </ol>
-                            </div><!-- end pages -->
+                            </div> -->
+                            <!-- end pages -->
                         </div><!-- end columns -->
 
                     </div><!-- end row -->
@@ -1045,6 +845,7 @@
         
         
         <!-- Page Scripts Starts -->
+        <script src="./js/flightSearchResult.js"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/bootstrap-datepicker.js"></script>
