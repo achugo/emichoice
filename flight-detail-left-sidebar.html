@@ -557,37 +557,31 @@
                         <div class="col-xs-12 col-sm-12 col-md-3 side-bar left-side-bar">
                             
                             <div class="side-bar-block booking-form-block">
-                            	<h2 class="selected-price">$568.00 <span>FR 5379</span></h2>
+                            	<h2 class="selected-price"><span class="price">&#x20A6; &nbsp;</span><span>FR 5379</span></h2>
                             
                             	<div class="booking-form">
                                 	<h3>Book Flight</h3>
                                     <p>Find your dream flight today</p>
                                     
                                     <form id="postData">
-                                    	<div class="form-group">
-                                    		<input type="text" class="form-control" placeholder="First Name" name="firstName" required/>                                       
-                                        </div>
+                                    
                                         
-                                        <div class="form-group">
-                                    		<input type="text" class="form-control" placeholder="Last Name" name="lastName" required/>                                       
+                                        <div class="form-group right-icon">
+                                                <select class="form-control" name="bags" required>
+                                                <option selected>Bags</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </select>
+                                            <i class="fa fa-angle-down"></i>
                                         </div>
-                                        
-                                        <div class="form-group">
-                                    		<input type="email" class="form-control" placeholder="Email" name="email" required/>                                       
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                    		<input type="text" class="form-control" placeholder="Phone" name="phoneNo" required/>                                       
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                    		<input type="text" class="form-control dpd3" placeholder="Booking Date" name="bookingDate" required/>                                       
-                                        </div>
+                                    
+                                      
                                         
                                         <div class="row">
                                         	<div class="col-sm-6 col-md-12 col-lg-6 no-sp-r">
                                                 <div class="form-group right-icon">
-                                                    <select class="form-control" name="adult">
+                                                    <select class="form-control" name="adult" required>
                                                         <option selected>Adults</option>
                                                         <option>1</option>
                                                         <option>2</option>
@@ -601,6 +595,7 @@
                                                 <div class="form-group right-icon">
                                                     <select class="form-control" name="children">
                                                         <option selected>Children</option>
+                                                        <option>0</option>
                                                         <option>1</option>
                                                         <option>2</option>
                                                         <option>3</option>
@@ -624,7 +619,7 @@
                                             <label for="check01"><span><i class="fa fa-check"></i></span>By continuing, you are agree to the <a href="#">Terms & Conditions.</a></label>
                                         </div>
                                         
-                                        <button type="submit" class="btn btn-block btn-orange">Confirm Booking</button>
+                                        <button type="submit" class="btn btn-block btn-orange">Continue</button>
                                     </form>
 
                                 </div><!-- end booking-form -->
@@ -698,9 +693,13 @@
                                 </ol>
                             </div> -->
                             <!-- end pages -->
+                            <div class="row more-results">
+                        
+                            </div>
                         </div><!-- end columns -->
 
                     </div><!-- end row -->
+                   
             	</div><!-- end container -->
             </div><!-- end flight-detail -->
         </section><!-- end innerpage-wrapper -->
@@ -741,7 +740,8 @@
                             <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
                         </div><!-- end b-feature-block -->
                    </div><!-- end columns -->
-                </div><!-- end row -->
+                </div>
+                <!-- end row -->
         	</div><!-- end container -->
         </section><!-- end best-features -->
         
@@ -819,8 +819,9 @@
                                 <li><a href="#"><span><i class="fa fa-youtube-play"></i></span></a></li>
                             </ul>
                         </div><!-- end columns -->
-                        
+                    
                     </div><!-- end row -->
+                   
                 </div><!-- end container -->
             </div><!-- end footer-top -->
 

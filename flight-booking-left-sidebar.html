@@ -628,7 +628,7 @@
                         
                         
                         <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 content-side">
-                        	<form class="lg-booking-form">
+                        	<form class="lg-booking-form" id="saveBooking">
                                 <div class="lg-booking-form-heading">
                                 	<span>1</span>
                                 	<h3>Personal Information</h3>
@@ -640,14 +640,14 @@
                                         <div class="col-xs-6 col-sm-6">
                                             <div class="form-group">
                                                 <label>First Name</label>
-                                                <input type="text" class="form-control" required/>
+                                                <input type="text" name="firstName" class="form-control" required/>
                                             </div>
                                         </div><!-- end columns -->
                                         
                                         <div class="col-xs-6 col-sm-6">
                                             <div class="form-group">
                                                 <label>Last Name</label>
-                                                <input type="text" class="form-control" required/>
+                                                <input type="text" name="lastName" class="form-control" required/>
                                             </div>
                                         </div><!-- end columns -->
                                     </div><!-- end row -->
@@ -656,14 +656,14 @@
                                     	<div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Date of Birth</label>
-                                                <input type="text" class="form-control dpd3" required/>
+                                                <input type="text" name="dob" class="form-control dpd3" required/>
                                             </div>
                                         </div><!-- end columns -->
                                         
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Country</label>
-                                                <input type="text" class="form-control" required/>
+                                                <input type="text" name="country" class="form-control" required/>
                                             </div>
                                         </div><!-- end columns -->
                                     </div><!-- end row -->
@@ -672,14 +672,14 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Email Address</label>
-                                                <input type="email" class="form-control" required/>
+                                                <input type="email" name="email" class="form-control" required/>
                                             </div>
                                         </div><!-- end columns -->
                                         
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Phone Number</label>
-                                                <input type="text" class="form-control" required/>
+                                                <input type="text" name="phone" class="form-control" required/>
                                             </div>
                                         </div><!-- end columns -->
                                     </div><!-- end row -->
@@ -694,100 +694,7 @@
                                     </div>   
                                 </div><!-- end personal-info -->
                                 
-                                <div class="lg-booking-form-heading">
-                                	<span>2</span>
-                                	<h3>Payment Information</h3>
-                                </div><!-- end lg-bform-heading -->
-                                
-                                <div class="payment-tabs">
-                                	<ul class="nav nav-tabs">
-                                    	<li class="active"><a href="#tab-credit-card" data-toggle="tab"> Via Credit Card</a></li>
-                                        <li><a href="#tab-paypal" data-toggle="tab">Via Paypal</a></li>
-                                    </ul>
-                                    
-                                    <div class="tab-content">
-                                    	<div id="tab-credit-card" class="tab-pane fade in active">
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>Card Type</label>
-                                                        <select class="form-control">
-                                                            <option selected>Select</option>
-                                                        </select>
-                                                        <span><i class="fa fa-angle-down"></i></span>
-                                                    </div>
-                                                </div><!-- end columns -->
-                                                
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>Card Number</label>
-                                                        <input type="text" class="form-control" required/>
-                                                    </div>
-                                                </div><!-- end columns -->
-                                            </div><!-- end row -->
-                                            
-                                            <div class="row">
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>Card Holder Name</label>
-                                                        <input type="text" class="form-control" required/>
-                                                    </div>
-                                                </div><!-- end columns -->
-                                                
-                                                <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                        <label>CVC</label>
-                                                        <input type="text" class="form-control" required/>
-                                                    </div>
-                                                </div><!-- end columns -->
-                                            </div><!-- end row -->
-                                            
-                                            <div class="row">
-                                                <div class="col-xs-6 col-sm-3">
-                                                    <div class="form-group">
-                                                        <label>Expiry Month</label>
-                                                        <select class="form-control">
-                                                            <option selected>Select</option>
-                                                            <option>February</option>
-                                                            <option>March</option>
-                                                            <option>April</option>
-                                                        </select>
-                                                        <span><i class="fa fa-angle-down"></i></span>
-                                                    </div>
-                                                </div><!-- end columns -->
-                                                
-                                                <div class="col-xs-6 col-sm-3">
-                                                    <div class="form-group">
-                                                        <label>Expiry Year</label>
-                                                        <select class="form-control">
-                                                            <option selected>Select</option>
-                                                            <option>2018</option>
-                                                            <option>2019</option>
-                                                            <option>2020</option>
-                                                        </select>
-                                                        <span><i class="fa fa-angle-down"></i></span>
-                                                    </div>
-                                                </div><!-- end columns -->  
-                                            </div><!-- end row -->
-                                            
-                                        </div><!-- end tab-credit-card -->
-                                        
-                                        <div id="tab-paypal" class="tab-pane fade">
-                                        	<img src="images/paypal.png" class="img-responsive" alt="paypal" />
-                                        	<div class="paypal-text">
-                                            	<p><span>Important:</span> You will be redirected to Paypal Website to make the payment process secure and complete.</p>
-                                                 <a href="#" class="btn btn-default btn-lightgrey">Checkout via Paypal<span><i class="fa fa-angle-double-right"></i></span></a>
-                                            </div><!-- end paypal-text -->
-                                            
-                                            <div class="clearfix"></div>
-                                        </div><!-- end tab-paypal -->
-                                        
-                                    </div><!-- end tab-content -->
-                                </div><!-- end payment-tabs -->
-                                            
-                                <div class="checkbox">
-                                    <label><input type="checkbox"> By continuing, you are agree to the <a href="#">Terms and Conditions.</a></label>
-                                </div><!-- end checkbox -->
+                         
                                   
                                 <button type="submit" class="btn btn-orange">Confirm Booking</button>
                             </form>
@@ -899,6 +806,7 @@
         
         
         <!-- Page Scripts Starts -->
+        <script src="./js/saveBooking.js"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/bootstrap-datepicker.js"></script>

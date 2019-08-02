@@ -105,7 +105,7 @@ flightsForm.addEventListener('submit', async (e) => {
     let queryResults = document.querySelector('.search-result .row');
     queryResults.innerHTML = " ";    
     let airLine = null;
-    searchResults.forEach(element => {
+    searchResults.forEach((element, index) => {
 
         airlines.forEach((airline)=> {
             if(airline.id == element.route[0].airline){
@@ -120,8 +120,8 @@ flightsForm.addEventListener('submit', async (e) => {
         let arrivalDate = arrival.toLocaleTimeString();
         let arrivalTime = arrival.toDateString();
 
-        
-        queryResults.innerHTML += `<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        var displayElem = index >= 8 ? "d-none" : "";
+        queryResults.innerHTML += `<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 search-results ${displayElem}">
         <div class="grid-block main-block f-grid-block">
             <a href="flight-detail-left-sidebar.html">
                 <div class="main-img f-img">
@@ -148,12 +148,25 @@ flightsForm.addEventListener('submit', async (e) => {
                 </div><!-- end flight-timing -->
                 
                 <div class="grid-btn">
-                    <a href="flight-detail-left-sidebar.html?flyFrom=${element.cityFrom}&flyTo=${element.cityTo}&checkIn=${checkIn}&checkOut=${checkOut}&duration=${element.fly_duration}" class="btn btn-orange btn-block btn-lg">View More</a>
+                    <a href="flight-detail-left-sidebar.html?flyFrom=${element.cityFrom}&flyTo=${element.cityTo}&checkIn=${checkIn}&checkOut=${checkOut}&duration=${element.fly_duration}&token=${element.booking_token}&price=${element.price}" class="btn btn-orange btn-block btn-lg">View More</a>
                 </div><!-- end grid-btn -->
             </div><!-- end f-grid-info -->
         </div><!-- end f-grid-block -->
     </div>`;
         console.log(element.cityFrom);
+
+        // const allResults = document.querySelectorAll('.search-results')
+        // let j = 0;
+        // const l = allResults.length;
+        // console.log(l);
+        // for (let i = j; i < l; i++) {
+        //     const element = allResults[i];
+        //     element.classList.remove('d-none');
+        //     if(i % 8 == 0){
+        //         break;
+        //     }
+            
+        // }
 
     });
 
@@ -167,13 +180,6 @@ flightsForm.addEventListener('submit', async (e) => {
 });
 
 
-
-// const baseurl = 'https://api.skypicker.com/locations';
-// const queries = 'locale=en-US&location_types=airport&limit=10&active_only=true&sort=name';
-
-
-
-// ?term=PRG&
 
 
 
