@@ -58,7 +58,7 @@ Author:			Star Travel
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
-	background: url(../images/loader-orange.gif) center no-repeat #fff;
+	background: url(../images/loader-orange.gif) center no-repeat rgba(255, 255, 255, 0.3);
 }
 
 p{
@@ -66,7 +66,7 @@ p{
 }
 
 .page-heading h2{
-	color:#231f20;
+	color:white;
 }
 
 .page-heading.white-heading h2{
@@ -219,7 +219,7 @@ p{
    ----------------------------------------------------- */
 
 #top-bar{
-	background-color:#000;
+	background-color:#165789;
 }
 
 #top-bar.colored{
@@ -265,7 +265,7 @@ p{
 }
 
 #flight-homepage #top-bar{
-	background:#faa61a;
+	background:#155688;
 }
 
 #cruise-homepage #top-bar{
@@ -1007,7 +1007,7 @@ p{
 /************** OFFER-PRICE-2 *************/
 
 .offer-price-2{
-	background:#000;
+	background:#155688;
 	color:white;
 }
 
@@ -1033,7 +1033,7 @@ p{
 }
 
 .main-mask{
-	background:rgba(0,0,0,0.8);
+	background:#165789;
 }
 
 .hotel-info{
@@ -1054,7 +1054,7 @@ p{
    ----------------------------------------------------- */
 
 #main-homepage #tour-offers{
-	background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(../images/tour-offers.jpg) 50% 0%;
+	background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(../images/img/Tour-background.png) 50% 0%;
 	background-size:cover;
 	background-attachment:fixed;
 }
@@ -1151,7 +1151,7 @@ p{
 }
 
 .flight-info .offer-price-1{
-	background:#1e1e1e;
+	background:#165789;
 }
 
 .flight-info .offer-price-1 li.price .pkg{
@@ -1297,7 +1297,7 @@ p{
 /************* BLACK-FEATURES *************/
 
 #best-features.black-features{
-	background:#232323;
+	background:#165789;
 	color:white;
 }
 
@@ -1318,23 +1318,23 @@ p{
 /*********** LIGHTGREY-FEATURES ***********/
 
 #best-features.lightgrey-features{	
-	background:#f5f5f5;
-	color:#000;
+	background:#155688;
+	color:white;
 }
 
 #best-features.lightgrey-features .b-feature-block .fa{
-	border:3px solid #000;
+	border:3px solid #faa61a;
 	color:white;
-	background:#000;
+	background:#faa61a;
 }
 
 #best-features.lightgrey-features .b-feature-block:hover .fa{
-	color:#000;
+	color:white;
 	background:transparent;
 }
 
 #best-features.lightgrey-features .b-feature-block p{
-	color:#000;
+	color:white;
 }
 
 /************* ORANGE FEATURES ************/
@@ -1528,7 +1528,7 @@ p{
    ----------------------------------------------------- */
 
 #testimonials{
-	background: linear-gradient(rgba(0, 0, 0,0.8),rgba(0, 0, 0,0.8)),url('../images/testimonials.jpg') 50% 87%;
+	background: linear-gradient(rgba(0, 0, 0,0.8),rgba(0, 0, 0,0.8)),url('../images/img/Testimonial.png') 50% 87%;
 	background-size:145%;
 	background-attachment:fixed;
 	color:white;
@@ -1767,13 +1767,13 @@ p{
 /************* NEWSLETTER-1 *************/
 
 #newsletter-1{
-	background:linear-gradient(rgba(0, 0, 0,0.6),rgba(0, 0, 0,0.6)),url('../images/newsletter.jpg') 50% 78%;
+	/* background:linear-gradient(rgba(0, 0, 0,0.6),rgba(0, 0, 0,0.6)),url('../images/newsletter.jpg') 50% 78%; */
 	background-size:140%;
-	color:white;
+	color:black;
 }
 
 #newsletter-1 p{
-	color:white;
+	color:black;
 }
 
 #newsletter-1 form .input-group-btn .btn:hover{
@@ -1837,7 +1837,7 @@ p{
    ----------------------------------------------------- */
 
 .ftr-top-grey{
-	background:#231f20;
+	background:#165789;
 }
 
 .ftr-top-black{
@@ -1845,7 +1845,7 @@ p{
 }
 
 .ftr-bot-black{
-	background:#0a0909;
+	background:#165789;
 }
 
 #footer.ftr-heading-o .footer-heading{
@@ -1891,6 +1891,15 @@ p{
 	color:#000;
 	background:#f49a04;
 }
+
+
+
+
+.newsletter-input{
+	box-shadow: 0 1px 6px #00000057;#165789
+}
+
+
 
 .footer-widget.ftr-newsletter input{
 	border:0px;

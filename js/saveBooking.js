@@ -18,7 +18,7 @@ function SaveBooking_(event){
     event.preventDefault();
     let tickTock = setInterval(async () => {
         const baseurl = 'https://booking-api.skypicker.com/api/v0.1/check_flights?'; 
-        const query = `v=2&booking_token=${token}&bnum=${bnum}&pnum=${pnum}&affily=picky_{market}&currency=USD&adults=${adult}&children=${children}&infants=1`
+        const query = `v=2&booking_token=${token}&bnum=${bnum}&pnum=${pnum}&affily=picky_{market}&currency=USD&adults=${adult}&children=${children}&infants=0`
         console.log(baseurl+query);
        
         const response = await fetch(baseurl + query);
@@ -29,7 +29,7 @@ function SaveBooking_(event){
     
             const flightID = data.flights[0].id;
             let bd = {}
-            bd[flightID] = {"1":1}
+            bd[flightID] = {"1":0}
             fetch('https://booking-api.skypicker.com/api/v0.1/save_booking?v=2', {
                 method: 'POST', // or 'PUT'
                 body: JSON.stringify({
@@ -37,8 +37,8 @@ function SaveBooking_(event){
                     bags: 1,
                     passengers: [
                       {
-                        name: "John",
-                        surname: "Smith",
+                        name: "test",
+                        surname: "test",
                         title: "mr",
                         phone: "+44 44857282842",
                         birthday: 783657600,
@@ -53,7 +53,7 @@ function SaveBooking_(event){
                     locale: "en",
                     currency: "usd",
                     booking_token: token,
-                    affily: "picky",
+                    partner: "picky",
                     booked_at: "picky",
                     user_id: "test",
                     secret_token: "test",

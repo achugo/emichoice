@@ -83,26 +83,26 @@ flyTo.addEventListener('keyup', async () => {
 
 flightsForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const flyFrom_ = fromCode
+
+    let queryResults = document.querySelector('.search-result .row');
+    let loader = document.querySelector('.loader')
+    loader.style.display = "block";
+    const flyFrom_ = fromCode;
     const flyTo_ = toCode;
     const checkIn = flightsForm.checkIn.value;
     const checkOut = flightsForm.checkOut.value;
     const base = "https://api.skypicker.com/flights";
     const query = `?flyFrom=${flyFrom_}&to=${flyTo_}&dateFrom=${checkIn}&dateTo=${checkOut}&partner=picky&curr=NGN`;
-
+  
     const response = await fetch(base + query);
     
-    const data = await response.json();
-
-    console.log(data)
+    const data = await response.json()
     // window.location.assign('http://127.0.0.1:5500/flight-search-result.html' + query)
     const searchResults = data.data;
-    console.log(searchResults);
-
     const response2 = await fetch('https://api.skypicker.com/airlines');
     const airlines = await response2.json()
 
-    let queryResults = document.querySelector('.search-result .row');
+   
     queryResults.innerHTML = " ";    
     let airLine = null;
     searchResults.forEach((element, index) => {
@@ -121,6 +121,7 @@ flightsForm.addEventListener('submit', async (e) => {
         let arrivalTime = arrival.toDateString();
 
         var displayElem = index >= 8 ? "d-none" : "";
+        loader.style.display = "none";
         queryResults.innerHTML += `<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 search-results ${displayElem}">
         <div class="grid-block main-block f-grid-block">
             <a href="flight-detail-left-sidebar.html">
