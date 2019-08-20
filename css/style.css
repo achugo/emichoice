@@ -718,9 +718,9 @@ h1,h2,h3,h4,h5,h6,.main-title a, .flight-info h3 .flight-destination,.blog-post-
 
 /* New */
 
-#main-menu .list-group .mega-sub-menu > a .arrow{
+/* #main-menu .list-group .mega-sub-menu > a .arrow{
 	
-}
+} */
 
 #main-menu .list-group .mega-sub-menu .mega-sub-menu-links a{
 	padding-left:55px;
@@ -5829,7 +5829,15 @@ h1,h2,h3,h4,h5,h6,.main-title a, .flight-info h3 .flight-destination,.blog-post-
 	height: 120px;
 	-webkit-animation: spin 2s linear infinite; /* Safari */
 	animation: spin 2s linear infinite;
-  }
+}
+
+.address-li {
+	display: flex;
+}
+
+#price {
+	font-weight: 750;
+}
   
   /* Safari */
   @-webkit-keyframes spin {
