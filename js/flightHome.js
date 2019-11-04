@@ -1,8 +1,8 @@
+
+let queryResults = document.querySelector('.search-result .row');
 const flightsForm = document.querySelector('.flightsForm');
 const flyFrom = document.querySelector('.flightsForm .flyFrom');
 const flyTo = document.querySelector('.flightsForm .flyTo');
-let queryResults = document.querySelector('.search-result .row');
-
 const autoComplete = (field, apiurl) => {
     field.addEventListener('keypress', () =>{
         //code function
@@ -92,13 +92,16 @@ flightsForm.addEventListener('submit', async (e) => {
     const checkIn = flightsForm.checkIn.value;
     const checkOut = flightsForm.checkOut.value;
     const base = "https://api.skypicker.com/flights";
-    const query = `?flyFrom=${flyFrom_}&to=${flyTo_}&dateFrom=${checkIn}&dateTo=${checkOut}&partner=picky&curr=NGN`;
-  
+    const dateTo = checkOut ? `&dateTo=${checkOut}` : ''
+    const query = `?flyFrom=${flyFrom_}&to=${flyTo_}&dateFrom=${checkIn}${dateTo}&partner=picky&curr=NGN`;
+    console.log(base + query)
     const response = await fetch(base + query);
     
     const data = await response.json()
     // window.location.assign('http://127.0.0.1:5500/flight-search-result.html' + query)
     const searchResults = data.data;
+    console.log(searchResults);
+    
     const response2 = await fetch('https://api.skypicker.com/airlines');
     const airlines = await response2.json()
 
@@ -120,7 +123,9 @@ flightsForm.addEventListener('submit', async (e) => {
         let arrivalDate = arrival.toLocaleTimeString();
         let arrivalTime = arrival.toDateString();
 
-        var displayElem = index >= 8 ? "d-none" : "";
+        let indexx = 8;
+        var displayElem = index >= indexx ? "d-none" : "";
+        
         loader.style.display = "none";
         queryResults.innerHTML += `<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 search-results ${displayElem}">
         <div class="grid-block main-block f-grid-block">
@@ -137,7 +142,7 @@ flightsForm.addEventListener('submit', async (e) => {
                 <div class="f-grid-desc">
                     <span class="f-grid-time"><i class="fa fa-clock-o"></i>${element.fly_duration}</span>
                     <h3 class="block-title"><a href="flight-detail-left-sidebar.html">${element.cityTo} to ${element.cityFrom}</a></h3>
-                    <p class="block-minor"><span>${airLine},</span> Oneway Flight</p>
+                    <p class="block-minor"><span>${airLine},</span>${checkOut == '' ? ' One Way' : ' Two Way'}</p>
                     <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei </p>
                 </div><!-- end f-grid-desc -->
                 
@@ -153,23 +158,27 @@ flightsForm.addEventListener('submit', async (e) => {
                 </div><!-- end grid-btn -->
             </div><!-- end f-grid-info -->
         </div><!-- end f-grid-block -->
-    </div>`;
-        console.log(element.cityFrom);
-
-        // const allResults = document.querySelectorAll('.search-results')
-        // let j = 0;
-        // const l = allResults.length;
-        // console.log(l);
-        // for (let i = j; i < l; i++) {
-        //     const element = allResults[i];
-        //     element.classList.remove('d-none');
-        //     if(i % 8 == 0){
-        //         break;
-        //     }
-            
-        // }
+    </div>
+   
+    `;
+        
+     
 
     });
+    var seeMore = document.querySelector('.more-flights')
+    let indexx = 8;
+    seeMore.addEventListener('click', (e) => {
+        let resultArray = document.querySelectorAll('.search-results.d-none')
+        for (let i = 0; i < resultArray.length; i++) {
+            const element = resultArray[i];
+            if(i <= indexx){
+                element.classList.remove('d-none')
+                console.log(element)
+            }
+            
+        }
+       
+    })
 
 
     console.log(queryResults);    
@@ -180,6 +189,8 @@ flightsForm.addEventListener('submit', async (e) => {
    // https://api.skypicker.com/flights?flyFrom=PRG&to=LGW&dateFrom=18/11/2018&dateTo=12/12/2018&partner=picky
 });
 
+
+let imgUrl = `https://www.gmail.com${}`
 
 
 

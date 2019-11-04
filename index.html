@@ -316,11 +316,10 @@
                                             
                                             <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
                                                 <div class="form-group right-icon">
-                                                    <select class="form-control">
-                                                        <option selected>Adults</option>
-                                                        <option>1</option>
-                                                        <option>2</option>
-                                                        <option>3</option>
+                                                    <select class="form-control" id="flightType">
+                                                        <option selected>Two Way</option>
+                                                        <option>One way</option>
+                                                       
                                                     </select>
                                                     <i class="fa fa-angle-down"></i>
                                                 </div>
@@ -618,6 +617,9 @@
                 </div><!-- end row --> 
             </div>
         </section>
+        <div class="view-all text-center more-flights">
+            <button class="btn btn-orange">See more</button>
+        </div>
 
         
         
@@ -1391,10 +1393,25 @@
                 </div><!-- end modal-content -->
             </div><!-- end modal-dialog -->
         </div><!-- end popup-ad -->
-                          
+         
+        <script src="./js/flightHome.js"></script>
+        <script>
+            const tripType = flightsForm.flightType;
+            tripType.addEventListener('change', function(e){
+                console.log('i was clicked')
+                if(tripType.options.selectedIndex == 1){
+                flightsForm.checkOut.setAttribute('disabled', true)
+                flightsForm.checkOut.value = ""
+                }
+                else{
+                    flightsForm.checkOut.removeAttribute('disabled')
+                }  
+            })
+           
+        </script>
         
         <!-- Page Scripts Starts -->
-        <script src="./js/flightHome.js"></script>
+      
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.magnific-popup.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
